@@ -1,0 +1,136 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative; /* Allows the pseudo-element for background image positioning */
+}
+
+body::before {
+    content: "";
+    position: fixed; /* Ensures the background image covers the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('background.jpg'); /* Set the background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.5; /* Adjusts the transparency of the background image */
+    z-index: -1; /* Moves the background behind all content */
+}
+
+/* Container Styles */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: transparent; /*rgba(255, 255, 255, 0.8) 
+    Keep the transparent background */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ensures it can be layered */
+    z-index: 1; /* Brings it above other elements if needed */
+}
+
+
+/* Heading Styles */
+h2 {
+    text-align: center;
+    color: #333; /* Darker color for better contrast */
+}
+
+/* Input Styles */
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 12px; /* Slightly larger padding for better accessibility */
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+/* Button Styles */
+button {
+    background-image: linear-gradient(to right, #F09819 0%, #EDDE5D 51%, #F09819 100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background-position 0.5s, box-shadow 0.3s; /* Added transition for smooth hover effects */
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: inline-block; /* Use inline-block for better control with alignment */
+    cursor: pointer; /* Add cursor pointer for better UX */
+}
+
+button:hover {
+    background-position: right center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Navigation Styles */
+nav {
+    margin: 20px 0;
+    text-align: center; /* Centers the nav links */
+}
+
+nav a {
+    margin: 0 15px; /* Increased margin for better spacing */
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold; /* Makes the links stand out */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #0056b3; /* Darken the color on hover */
+}
+
+/* Gradient Button Styles */
+.btn-grad {
+    background-image: linear-gradient(to right, #16A085 0%, #F4D03F 51%, #16A085 100%);
+    margin: 50px;
+    padding: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: inline-block; /* inline-block allows it to remain on the same line */
+    margin-top: 5%; /* Adjusts margin for better positioning */
+    cursor: pointer; /* Cursor pointer for better interaction */
+}
+
+.btn-grad:hover {
+    background-position: right center; /* Gradient shifts on hover */
+    color: #fff;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2); /* Enhanced hover effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Increased width for smaller screens */
+        padding: 10px;
+    }
+
+    button, .btn-grad {
+        padding: 10px 30px; /* Adjust button size for smaller screens */
+        font-size: 16px; /* Slightly reduced font size */
+    }
+
+    nav a {
+        margin: 0 8px; /* Closer spacing for nav links on smaller screens */
+    }
+}
